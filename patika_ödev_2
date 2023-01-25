@@ -1,0 +1,17 @@
+$planets = ["mercury", "venus", "earth","mars","jupiter","saturn","uranus","neptune","","", NULL];
+
+function arr_func($array,$value){
+
+    $filter= array_filter($array);
+    $random= array_rand($filter,$value);
+    $output= array_map(function ($a) use ($filter){
+        return $filter[$a];
+    },$random);
+    return $output;
+
+}
+print_r(arr_func($planets, 2));
+print_r(arr_func($planets, 3));
+print_r(arr_func($planets, 2));
+print_r(arr_func($planets, 4));
+print_r(arr_func($planets, 5));
